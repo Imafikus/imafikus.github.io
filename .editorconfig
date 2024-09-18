@@ -1,0 +1,14 @@
+# EditorConfig is awesome: https://editorconfig.org
+
+# Top-most EditorConfig file
+root = true
+
+# HTML files
+[*.html]
+indent_style = tab
+indent_size = 2
+
+# JavaScript files
+[*.js]
+indent_style = tab
+indent_size = 2
