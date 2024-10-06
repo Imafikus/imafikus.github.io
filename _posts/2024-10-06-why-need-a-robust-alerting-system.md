@@ -4,8 +4,7 @@ title:  "Why you need a robust alerting system  - how we caused 9 days of silent
 date:   2024-10-06 18:05:52 +0200
 categories: startup
 ---
-We are working on a service called [Notify Me](https://notify-me.rs){:target="_blank"}{:rel="noopener noreferrer"}
- - it’s a simple update tracker whose core function is to send you a notification whenever a page you are tracking changes it’s content. 
+We are working on a service called [Notify Me](https://notify-me.rs){:target="_blank"}{:rel="noopener noreferrer"} - it’s a simple update tracker whose core function is to send you a notification whenever a page you are tracking changes it’s content. 
 
 We have around 3200 users, mostly on freemium plans, and from 13th of September until 24th of September we haven’t sent a single site update to 99% of them, and we discovered that our service wasn’t working properly by chance. In this post, I’ll try to explain how this happened.
 
