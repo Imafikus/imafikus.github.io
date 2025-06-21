@@ -1,19 +1,19 @@
 ---
 layout: post
-title:  "Backfilling our prod database with a discord channel"
-date:   2025-01-27 22:48:00 +0200
+title: 'Backfilling our prod database with a discord channel'
+date: 2025-01-27 22:48:00 +0200
 categories: startup
 ---
 
 ## The Problem
 
-I was checking something in our prod database on [Notify Me](https://notify-me.rs){:target="_blank"} and I realized that the recently created user didn't have a `created_at` field set, which was super weird, since we are doing this automatically for every new database insert. After checking few more users I've realized that all of our recent sign ups that were done via Google OAuth (almost everyone signs up this way) had an empty `created_at` field.
+I was checking something in our prod database on [Notify Me](https://notify-me.rs){:target="\_blank"} and I realized that the recently created user didn't have a `created_at` field set, which was super weird, since we are doing this automatically for every new database insert. After checking few more users I've realized that all of our recent sign ups that were done via Google OAuth (almost everyone signs up this way) had an empty `created_at` field.
 
 While this wasn't a problem for the user, since we didn't used the field for any user facing functionalities, it created a problem for us, since `created_at` field is very important for our statistics and it was very useful in the past. Especially when we introduced paid plans and we wanted to enable free access to some paid features to our early users.
 
 ## Our Database Setup
 
-We are using a self-hosted version of [MongoDB](https://www.mongodb.com/){:target="_blank"}{:rel="noopener noreferrer"}, and we are using [Beanie ODM](https://beanie-odm.dev/){:target="_blank"}{:rel="noopener noreferrer"} to interact with the database. We have various models that respond to a specific table in the database, (obviously) including the user model as well. Our user model has previously mentioned `created_at` field which we were automatically setting on every insert event.
+We are using a self-hosted version of [MongoDB](https://www.mongodb.com/){:target="\_blank"}{:rel="noopener noreferrer"}, and we are using [Beanie ODM](https://beanie-odm.dev/){:target="\_blank"}{:rel="noopener noreferrer"} to interact with the database. We have various models that respond to a specific table in the database, (obviously) including the user model as well. Our user model has previously mentioned `created_at` field which we were automatically setting on every insert event.
 
 ```python
 # code that runs automatically on every insertion
@@ -41,7 +41,7 @@ While the fix was pretty easy, we were still left with around 700 users for whom
 
 That's were the headline of this blog post comes in.
 
-We have an internal discord server which is our main way of communication for all things related to [Notify Me](https://notify-me.rs){:target="_blank"}. Among many channels we have, there is a channel called `user-alerts` where we automatically receive a message whenever a new user has signed up, when user leaves us a review and when user deletes the account. We realized that that channel contained all the necessary info we needed to backfill our database, since we had that channel for years, and it contained info about (almost) every single user that ever signed up to [Notify Me](https://notify-me.rs){:target="_blank"}.
+We have an internal discord server which is our main way of communication for all things related to [Notify Me](https://notify-me.rs){:target="\_blank"}. Among many channels we have, there is a channel called `user-alerts` where we automatically receive a message whenever a new user has signed up, when user leaves us a review and when user deletes the account. We realized that that channel contained all the necessary info we needed to backfill our database, since we had that channel for years, and it contained info about (almost) every single user that ever signed up to [Notify Me](https://notify-me.rs){:target="\_blank"}.
 
 Messages we needed where in the following format:
 

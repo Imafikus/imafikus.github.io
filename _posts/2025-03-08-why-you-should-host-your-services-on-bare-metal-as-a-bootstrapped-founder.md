@@ -1,4 +1,4 @@
-# Why you should host your services on bare metal as a bootstrapped (technical) founder
+## Introduction
 
 Founding a startup (especially bootstrapped startup) is all but an easy thing to do. There is fire everywhere. On multiple fronts. Constantly. So when someone mentions you that you should move to bare metal it can certainly feel like adding gasoline to the already raging inferno.
 
@@ -30,7 +30,7 @@ We were also heavily optimizing our costs here. That meant running our services 
 
 But I’ll just migrate my infrastructure somewhere cheaper once I start getting users, what’s the big deal? - No, you will not.
 
-You’ll very soon realize that all that magical clicking and set up you did *cannot be duplicated easily***.** Because new cloud has it’s own magical clickable stuff, which is different than your current magical clickable stuff. So you need to spend considerable amount of time just to replicate the existing setup, without any other improvements.
+You’ll very soon realize that all that magical clicking and set up you did \*cannot be duplicated easily**\*.** Because new cloud has it’s own magical clickable stuff, which is different than your current magical clickable stuff. So you need to spend considerable amount of time just to replicate the existing setup, without any other improvements.
 
 You just got vendor locked without realizing it.
 
@@ -52,7 +52,7 @@ You’ll also get in depth knowledge of all the parts of your tech stack, from b
 
 ## Stupidly cheap servers
 
-And onto the most imporant thing - Bare metal servers are  **c h e a p**. Seriously. Just find a service that offers VMs for rent. We use [Hetzner](https://www.hetzner.com/cloud/) for that.
+And onto the most imporant thing - Bare metal servers are **c h e a p**. Seriously. Just find a service that offers VMs for rent. We use [Hetzner](https://www.hetzner.com/cloud/) for that.
 
 Just to give you an idea of what the cost differences are between using the equivalent VM on Google Cloud and Hetzner:
 
