@@ -4,15 +4,11 @@ title: About
 permalink: /about/
 ---
 
-# Aleksa Tešić
-
 **Email**: aleksatesicteske@gmail.com  
 **GitHub**: [github.com/Imafikus](https://github.com/Imafikus)  
 **LinkedIn**: [Aleksa Tešić](https://www.linkedin.com/in/aleksa-tesic/)
 
 ---
-
-## About
 
 Passionate about building good products. Looking for a product engineer role since the intersection between product and engineering is where I thrive.
 
